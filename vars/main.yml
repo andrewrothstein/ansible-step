@@ -1,0 +1,11 @@
+---
+# vars file for step
+step_platform: '{{ step_os }}_{{ step_arch }}'
+step_name: step_{{ step_ver }}
+step_tgz: step_{{ step_os }}_{{ step_ver }}_{{ step_arch }}.tar.gz
+step_tmp_tgz: /tmp/{{ step_tgz }}
+step_url: '{{ step_mirror }}/v{{ step_ver }}/{{ step_tgz }}'
+step_install_dir: '{{ step_parent_install_dir }}/{{ step_name }}'
+step_install_exe: '{{ step_install_dir }}/bin/step'
+step_install_link: '{{ step_parent_install_dir }}/bin/step'
+step_checksum: '{{ step_checksums[step_ver][step_platform] }}'
