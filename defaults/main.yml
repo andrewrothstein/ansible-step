@@ -1,6 +1,6 @@
 ---
 # defaults file for step
-step_ver: 0.15.3
+step_ver: 0.15.16
 step_mirror: https://github.com/smallstep/cli/releases/download
 step_os: linux
 step_arch: amd64
@@ -17,3 +17,14 @@ step_checksums:
     linux_armv7: sha256:135588f75107ee39f180c0b2497143b7a8074c5d6641ff731cf9f2a2df4f954a
     # https://github.com/smallstep/cli/releases/download/v0.15.3/step_windows_0.15.3_amd64.tar.gz
     windows_amd64: sha256:f54c9cc1326f05b75204c0c665ff021c6630788b829c599c1d64a8191f015554
+  '0.15.16':
+    # https://github.com/smallstep/cli/releases/download/v0.15.16/step_darwin_0.15.16_amd64.tar.gz
+    darwin_amd64: sha256:1d6b08d837e1bccb7c1fa9f28d910389f01570222a9437029db7a18eafeb7ced
+    # https://github.com/smallstep/cli/releases/download/v0.15.16/step_linux_0.15.16_amd64.tar.gz
+    linux_amd64: sha256:cd4aaf963a251c3578cc74bc3bd417c86a577c0f76dad9224991f6b66b14fb6f
+    # https://github.com/smallstep/cli/releases/download/v0.15.16/step_linux_0.15.16_arm64.tar.gz
+    linux_arm64: sha256:85f98e4de35ab06f79a3a8391f025d42822ac96f5a349c87dfcf56a0d5da2541
+    # https://github.com/smallstep/cli/releases/download/v0.15.16/step_linux_0.15.16_armv7.tar.gz
+    linux_armv7: sha256:8a3b1c6025658f47074aa2adbf79010c657e303863ea66a55bf9cf6da1a2ad55
+    # https://github.com/smallstep/cli/releases/download/v0.15.16/step_windows_0.15.16_amd64.tar.gz
+    windows_amd64: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
