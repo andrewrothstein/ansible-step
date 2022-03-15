@@ -10,15 +10,15 @@
       paths:
         - '{{ role_path }}/vars'
 - name: check for install in {{ step_install_dir }}
-  become: yes
+  become: true
   stat:
     path: '{{ step_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: step_binary
 - when: not step_binary.stat.exists
   block:
     - name: downloading {{ step_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ step_url }}'
@@ -26,22 +26,22 @@
         checksum: '{{ step_checksum }}'
         mode: 0644
     - name: unarchive {{ step_tmp_tgz }} to {{ step_parent_install_dir }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ step_tmp_tgz }}'
         dest: '{{ step_parent_install_dir }}'
         creates: '{{ step_install_exe }}'
   always:
     - name: rm {{ step_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ step_tmp_tgz }}'
         state: absent
 - name: linking {{ step_install_link }} to {{ step_install_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ step_install_exe }}'
