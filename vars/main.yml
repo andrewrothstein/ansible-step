@@ -1,5 +1,7 @@
 ---
 # vars file for step
+step_os: '{{ ansible_system | lower }}'
+step_arch: '{{ step_arch_map[ansible_architecture] }}'
 step_platform: '{{ step_os }}_{{ step_arch }}'
 step_name: step_{{ step_ver }}
 step_tgz: step_{{ step_os }}_{{ step_ver }}_{{ step_arch }}.tar.gz
