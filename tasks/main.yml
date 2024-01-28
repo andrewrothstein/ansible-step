@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,41 +12,42 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install in {{ step_install_dir }}
+- name: Check for install in {{ step_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ step_install_dir }}'
   changed_when: false
   register: step_binary
-- when: not step_binary.stat.exists
+- name: Downloading and installing step
+  when: not step_binary.stat.exists
   block:
-    - name: downloading {{ step_url }}
+    - name: Downloading {{ step_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ step_url }}'
         dest: '{{ step_tmp_tgz }}'
         checksum: '{{ step_checksum }}'
-        mode: 0644
-    - name: unarchive {{ step_tmp_tgz }} to {{ step_parent_install_dir }}
+        mode: '644'
+    - name: Unarchive {{ step_tmp_tgz }} to {{ step_parent_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ step_tmp_tgz }}'
         dest: '{{ step_parent_install_dir }}'
         creates: '{{ step_install_exe }}'
   always:
-    - name: rm {{ step_tmp_tgz }}
+    - name: Rm {{ step_tmp_tgz }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ step_tmp_tgz }}'
         state: absent
-- name: linking {{ step_install_link }} to {{ step_install_exe }}
+- name: Linking {{ step_install_link }} to {{ step_install_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ step_install_exe }}'
     dest: '{{ step_install_link }}'
     state: link
