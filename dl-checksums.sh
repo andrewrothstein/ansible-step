@@ -33,4 +33,4 @@ dl_ver() {
     dl $ver windows arm64 zip
 }
 
-dl_ver ${1:-0.27.4}
+dl_ver ${1:-0.28.0}
