@@ -1,6 +1,6 @@
 ---
 # defaults file for step
-step_ver: 0.28.5
+step_ver: 0.28.6
 step_mirror: https://github.com/smallstep/cli/releases/download
 step_arch_map:
   aarch64: arm64
@@ -177,3 +177,18 @@ step_checksums:
     windows_amd64: sha256:393da5f8bbbee1affcc82a8267eb10be74375cef557653f5a36753e489549850
     # https://github.com/smallstep/cli/releases/download/v0.28.5/step_windows_0.28.5_arm64.zip
     windows_arm64: sha256:1506037917ec9144cc27d1e0577e0b1eebba269bfaf6068fd7aa636fbf312401
+  '0.28.6':
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_darwin_0.28.6_amd64.tar.gz
+    darwin_amd64: sha256:9ba97a5db27e58e07f6a242a637c9564edcb66d7b59acb13e1d6a52b27784fd6
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_darwin_0.28.6_arm64.tar.gz
+    darwin_arm64: sha256:5da7d559d2f4efd23d50be612c5fd3c54e99129fc66e7315ee627c2383420fd7
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_linux_0.28.6_amd64.tar.gz
+    linux_amd64: sha256:0c1d8eeddef7dd4ba279c7985392602163c19412860efc5bbad05f9ffe3a7338
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_linux_0.28.6_arm64.tar.gz
+    linux_arm64: sha256:1475ce97bc41873d7665f947277d209d30010f23eeb8688d5f677df6f0a11662
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_linux_0.28.6_armv7.tar.gz
+    linux_armv7: sha256:63eea52914d0d1484266ba9f0cc2b009a98a38ff83bae3c88d9c26778366d720
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_windows_0.28.6_amd64.zip
+    windows_amd64: sha256:5fe37311ab0167020076143d851487bddddb34dd707ed9d53de2cdf3119567bc
+    # https://github.com/smallstep/cli/releases/download/v0.28.6/step_windows_0.28.6_arm64.zip
+    windows_arm64: sha256:96cb41e28d59ddabaa48cadb06ac504c6bcab3e9c338971ac33e1278d87ef75a
